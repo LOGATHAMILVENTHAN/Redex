@@ -1,28 +1,59 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment, reset,addnumber } from './Counterslice'
+
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement, increment, reset, addnumber } from './Counterslice';
 
 function Counter() {
-    let count =useSelector(state=>state.counter.count)
-    let vdart=useDispatch()
-    let [add,setadd]=useState()
-    let handleaddnumber=()=>{
-      vdart(addnumber(add)) 
-      
-      setadd("")  
+  
+  let count = useSelector(state => state.counter.count);
+  let vdart = useDispatch();
+  
+  
+  let [add, setadd] = useState('');
+
+  
+  const handleAddNumber = () => {
+    if (add) {
+      vdart(addnumber(add)); 
     }
+  };
+
+  
+  const handleSubtractNumber = () => {
+    if (add) {
+      vdart(addnumber(-add)); 
+      setadd(''); 
+    }
+  };
+
   return (
     <div>
-        <h1>Counter</h1>
-        <p> counter : {count}</p>
-        <button onClick={()=>vdart(increment())}>add</button>
-        <button onClick={()=>vdart(decrement())}>sub</button>
-        <button onClick={()=>vdart(reset())}>reset</button>
-        <input type='number'onChange={(e)=>setadd(Number(e.target.value))} value={add}/>
-        <button onClick={handleaddnumber}>Add and submit</button>
-
+      <p className='about'>
+        Using useDispatch, useSelector from 'react-redux' and using decrement, increment, reset, addnumber from './Counterslice'.
+      </p>
+      <h1>Counter</h1>
+      <p className='count'>Counter: {count}</p>
+      
+      {/* Add Button */}
+      <button onClick={() => vdart(increment())}>Add</button>
+      
+      {/* Subtract Button ) */}
+      <button onClick={handleSubtractNumber}>Subtract</button>
+      
+      {/* Reset Button */}
+      <button onClick={() => vdart(reset())}>Reset</button>
+      
+      {/* Input Field to enter a number */}
+      <input 
+        type='number' 
+        onChange={(e) => setadd(Number(e.target.value))} 
+        value={add} 
+      />
+      
+      {/* Add and Submit Button */}
+      <button onClick={handleAddNumber}>Add and Submit</button>
     </div>
-  )
+  );
 }
 
-export default Counter
+export default Counter;
