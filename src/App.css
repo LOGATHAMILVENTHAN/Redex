@@ -1,114 +1,164 @@
 /* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: black;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden; /* Prevents overflow on smaller devices */
+}
+
+/* Heading styling */
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: blue;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Counter container styling */
+.counter-container {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Limits the maximum width */
+  border: 1px solid #ddd;
+  margin: auto;
+}
+
+/* About section */
+.about {
+  color: white;
+}
+
+/* Counter styling */
+.counter-container p {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.count {
+  color: yellow;
+  font-size: 20px;
+}
+
+/* Button styling */
+button {
+  background-color: blue;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #357ABD;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #29688A;
+}
+
+/* Input styling */
+input[type='number'] {
+  padding: 10px;
+  width: 100%;
+  max-width: 120px; /* Limits the input width */
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+button.add-submit {
+  background-color: #50E3C2;
+}
+
+button.add-submit:hover {
+  background-color: #39B29B;
+}
+
+button.add-submit:active {
+  background-color: #2A8F77;
+}
+
+/* Focus state for input */
+input[type='number']:focus {
+  border-color: blue;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   body {
-    font-family: 'Arial', sans-serif;
-    background-color: black;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 20px;
+    padding: 10px; /* Reduced padding on smaller screens */
   }
-  
+
   h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    color: blue;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 2.5rem; /* Slightly smaller font on medium screens */
   }
-  
+
   .counter-container {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
-    width: 300px;
-    border: 1px solid #ddd;
+    padding: 20px; /* Reduced padding on smaller screens */
+    width: 100%; /* Ensures full width on smaller screens */
+    max-width: 90%; /* Limits the container to 90% of the screen width */
   }
-  .about{
-    color: white;
-  }
+
   .counter-container p {
-    font-size: 2rem;
-    font-weight: 500;
-    margin: 20px 0;
+    font-size: 1.5rem; /* Reduced text size */
   }
- .count{
-    color: yellow;
- }
-  
-  button {
-    background-color: blue;
-    color:black;
-    border: none;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-  }
-  
-  button:hover {
-    background-color: #357ABD;
-    transform: scale(1.05);
-  }
-  
-  button:active {
-    background-color: #29688A;
-  }
-  
+
   input[type='number'] {
-    padding: 10px;
-    width: 100px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
+    width: 100%;
+    max-width: 150px; /* Makes sure input doesn’t exceed screen size */
   }
-  
-  button.add-submit {
-    background-color: #50E3C2;
+
+  button {
+    font-size: 1.1rem; /* Reduced font size for buttons on mobile */
+    padding: 8px 16px; /* Adjust button padding */
   }
-  
-  button.add-submit:hover {
-    background-color: #39B29B;
+}
+
+/* More refined mobile adjustments for very small screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem; /* Make heading smaller on very small screens */
   }
-  
-  button.add-submit:active {
-    background-color: #2A8F77;
+
+  .counter-container {
+    padding: 15px; /* More compact padding for smaller screens */
   }
-  
-  input[type='number']:focus {
-    border-color: blue;
-    outline: none;
+
+  .counter-container p {
+    font-size: 1.3rem; /* Smaller text size */
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 600px) {
-    .counter-container {
-      width: 100%;
-      padding: 20px;
-    }
-  
-    h1 {
-      font-size: 2.5rem;
-    }
-  
-    button {
-      font-size: 1rem;
-    }
-  
-    input[type='number'] {
-      width: 80%;
-    }
+
+  input[type='number'] {
+    max-width: 80%; /* Ensures input remains usable without exceeding screen */
   }
-  
+
+  button {
+    font-size: 1rem; /* Further reduced button font size */
+    padding: 8px 14px; /* Adjusted padding */
+  }
+}

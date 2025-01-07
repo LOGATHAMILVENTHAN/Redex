@@ -21,7 +21,7 @@ function Counter() {
   
   const handleSubtractNumber = () => {
     if (add) {
-      vdart(addnumber(-add)); 
+      vdart(addnumber(add)); 
       setadd(''); 
     }
   };
@@ -31,7 +31,7 @@ function Counter() {
       <p className='about'>
         Using useDispatch, useSelector from 'react-redux' and using decrement, increment, reset, addnumber from './Counterslice'.
       </p>
-      <h1>Counter</h1>
+      <h1 >Counter</h1>
       <p className='count'>Counter: {count}</p>
       
       {/* Add Button */}
@@ -51,7 +51,7 @@ function Counter() {
       />
       
       {/* Add and Submit Button */}
-      <button onClick={handleAddNumber}>Add and Submit</button>
+      <button onClick={handleAddNumber}>SUBMIT</button>
     </div>
   );
 }
